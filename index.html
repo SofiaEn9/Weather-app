@@ -4,67 +4,81 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
-    <link rel="stylesheet" href="src/style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
     <div class="container">
-      <div class="forecast">
-        <div class="row">
-          <div class="col-7 main-forecast">
-            <h3 class="city">Chihuahua</h3>
-            <h4 class="date"><span>monday </span><span>9:00</span></h4>
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-              alt=""
-            />
-            <h1>32 <span>ºC | ºF</span></h1>
-            <ul>
-              <li>Clear Sky</li>
-              <li>Humidity: 13%</li>
-              <li>Wind Speed: 4 km/h</li>
-            </ul>
-          </div>
-          <div class="col-5">
-            <div class="row daily-forecast">
-              <div class="col-5 mini-icon"></div>
-              <div class="day1-specs">
-                <ul>
-                  <li>mon</li>
-                  <li>38º / 22º</li>
-                </ul>
-              </div>
+      <div class="weather-app">
+        <div class="forecast">
+          <div class="row">
+            <div class="col-7 main-forecast">
+              <h3 class="city">Chihuahua</h3>
+              <h4 class="date"><span>monday </span><span>9:00</span></h4>
+              <img
+                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                alt=""
+              />
+              <h1>
+                <span id="current-temperature">32</span
+                ><span class="degrees">ºC | <a href="#">ºF</a></span>
+              </h1>
+              <ul class="main-forecast-specs">
+                <li id="main-weather-description">Clear Sky</li>
+                <li>Humidity: 13%</li>
+                <li>Wind Speed: 4 km/h</li>
+              </ul>
             </div>
-            <div class="row daily-forecast">
-              <div class="col-5 mini-icon"></div>
-              <div class="day1-specs">
-                <ul>
-                  <li>tue</li>
-                  <li>38º / 22º</li>
-                </ul>
+            <div class="col-5">
+              <div class="row day-forecast">
+                <div class="col-5 mini-icon"></div>
+                <div class="day-specs">
+                  <ul>
+                    <li class="week-day">mon</li>
+                    <li class="week-day-temperature">38º / 22º</li>
+                  </ul>
+                </div>
               </div>
-            </div>
-            <div class="row daily-forecast">
-              <div class="col-5 mini-icon"></div>
-              <div class="day1-specs">
-                <ul>
-                  <li>wed</li>
-                  <li>38º / 22º</li>
-                </ul>
+              <div class="row day-forecast">
+                <div class="col-5 mini-icon"></div>
+                <div class="day-specs">
+                  <ul>
+                    <li class="week-day">tue</li>
+                    <li class="week-day-temperature">38º / 22º</li>
+                  </ul>
+                </div>
               </div>
-            </div>
-            <div class="row daily-forecast">
-              <div class="col-5 mini-icon"></div>
-              <div class="day1-specs">
-                <ul>
-                  <li>thu</li>
-                  <li>38º / 22º</li>
-                </ul>
+              <div class="row day-forecast">
+                <div class="col-5 mini-icon"></div>
+                <div class="day-specs">
+                  <ul>
+                    <li class="week-day">wed</li>
+                    <li class="week-day-temperature">38º / 22º</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="row day-forecast">
+                <div class="col-5 mini-icon"></div>
+                <div class="day-specs">
+                  <ul>
+                    <li class="week-day">thu</li>
+                    <li class="week-day-temperature">38º / 22º</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="row day-forecast">
+                <div class="col-5 mini-icon"></div>
+                <div class="day-specs">
+                  <ul>
+                    <li class="week-day">fri</li>
+                    <li class="week-day-temperature">38º / 22º</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>

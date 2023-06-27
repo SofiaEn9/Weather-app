@@ -1,3 +1,147 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.weather-app {
+  background-image: radial-gradient(
+      circle at 18.7% 37.8%,
+      rgb(250, 250, 250, 0.8) 0%,
+      rgb(225, 234, 238, 0.8) 90%
+    ),
+    url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/085/496/original/weather.jpeg?1686676314);
+  background-size: 900px;
+  border-radius: 15px;
+  color: #61676c;
+  box-shadow: 10px 10px 20px rgba(200, 202, 225, 0.2);
+  margin: 0 auto;
+  margin-top: 50px;
+  max-width: 600px;
+  padding: 50px;
+}
+
+/* Search Bar */
+
+/* Main Forecast Container */
+.main-forecast {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 10px 10px 20px rgba(200, 202, 225, 0.2);
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  border-right: 1px solid rgba(200, 202, 225, 0.3);
+  border-bottom: 1px solid rgba(200, 202, 225, 0.3);
+  border-radius: 10px;
+  backdrop-filter: blur(3px);
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.main-forecast:hover {
+  /* transform: scale(1.05); */
+  filter: brightness(105%);
+}
+
+h3,
+h4 {
+  margin-bottom: 0px;
+  margin-left: 20px;
+  text-align: left;
+  text-transform: capitalize;
+  line-height: 20px;
+}
+
+.date {
+  font-size: 22px;
+  color: rgba(97, 103, 108, 0.6);
+  line-height: 30px;
+}
+
+img {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
 h1 {
-  color: blueviolet;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+#current-temperature {
+  color: rgba(97, 103, 108, 0.9);
+  font-size: 48px;
+  margin: 0;
+  padding-left: 0px;
+}
+
+.degrees {
+  color: rgba(97, 103, 108, 0.8);
+  font-size: 16px;
+  position: relative;
+  top: -19px;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  text-align: left;
+}
+
+#main-weather-description {
+  font-size: 18px;
+  text-transform: capitalize;
+}
+
+ul.main-forecast-specs {
+  font-size: 14px;
+  line-height: 20px;
+  margin-top: 25px;
+}
+
+/* Additional Forecast Container */
+.day-forecast {
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 10px 10px 20px rgba(200, 202, 225, 0.2);
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  border-right: 1px solid rgba(200, 202, 225, 0.3);
+  border-radius: 10px;
+  backdrop-filter: blur(3px);
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.day-forecast:hover {
+  /* transform: scale(1.1); */
+  filter: brightness(105%);
+}
+
+.day-specs {
+  align-content: center;
+}
+
+.week-day {
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.week-day-temperature {
+  color: rgba(97, 103, 108, 0.6);
+  font-weight: 200;
+}
+
+footer {
+  color: rgb(159, 173, 191);
+  font-size: 12px;
+  text-align: center;
+  padding-top: 20px;
 }
