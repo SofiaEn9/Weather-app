@@ -18,6 +18,27 @@
       <div class="weather-app">
         <div class="forecast">
           <div class="row">
+            <form id="search-form">
+              <div class="row">
+                <div class="col-9 px-1">
+                  <input
+                    type="search"
+                    placeholder="Type a city"
+                    class="form-control"
+                    id="city-input"
+                    autocomplete="off"
+                  />
+                </div>
+                <div class="col-3 px-1">
+                  <input
+                    type="submit"
+                    value="Search"
+                    class="btn w-100"
+                    id="search-bar-button"
+                  />
+                </div>
+              </div>
+            </form>
             <div class="col-7 main-forecast">
               <h3 id="city"></h3>
               <h4>
