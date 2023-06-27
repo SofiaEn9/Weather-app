@@ -50,10 +50,15 @@ h4 {
   line-height: 20px;
 }
 
-.date {
+h4 {
   font-size: 22px;
   color: rgba(97, 103, 108, 0.6);
   line-height: 30px;
+}
+
+.date-note {
+  font-size: 12px;
+  line-height: 12px;
 }
 
 img {
