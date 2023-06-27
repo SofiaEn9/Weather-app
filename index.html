@@ -10,6 +10,7 @@
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
@@ -18,7 +19,7 @@
         <div class="forecast">
           <div class="row">
             <div class="col-7 main-forecast">
-              <h3 class="city">Chihuahua</h3>
+              <h3 id="city"></h3>
               <h4 class="date"><span>monday </span><span>9:00</span></h4>
               <img
                 src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
@@ -29,9 +30,9 @@
                 ><span class="degrees">ºC | <a href="#">ºF</a></span>
               </h1>
               <ul class="main-forecast-specs">
-                <li id="main-weather-description">Clear Sky</li>
-                <li>Humidity: 13%</li>
-                <li>Wind Speed: 4 km/h</li>
+                <li id="weather-description">Clear Sky</li>
+                <li>Humidity: <span id="humidity">13</span>%</li>
+                <li>Wind Speed: <span id="wind-speed">4</span> km/h</li>
               </ul>
             </div>
             <div class="col-5">
