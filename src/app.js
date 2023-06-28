@@ -21,6 +21,39 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["thu", "fri", "sat", "sun", "mon"];
+
+  let forecastHTML = ``;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="row week-forecast">
+        <div class="col-5">
+          <img
+            src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png","
+            alt="" class="forecast-icon" id="forecast-icon"/>
+        </div>
+        <div class="col-7 forecast-specs">
+          <div class="forecast-day">${day}</div>
+            <div class="forecast-temperature">
+              <span class="forecast-temperature-max">38º</span>
+              <span class="forecast-temperature-division"> | </span>
+              <span class="forecast-temperature-min">22º</span>
+            </div>
+           </div>
+         </div>
+       `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
+
 function displayTemperature(response) {
   console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.city;
@@ -89,3 +122,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 searchInput("Chihuahua");
+displayForecast();

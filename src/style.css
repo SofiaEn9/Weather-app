@@ -146,7 +146,7 @@ ul.main-forecast-specs {
 }
 
 /* Additional Forecast Container */
-.forecast {
+.week-forecast {
   align-items: center;
   background: rgba(255, 255, 255, 0.5);
   box-shadow: 10px 10px 20px rgba(200, 202, 225, 0.2);
@@ -156,11 +156,12 @@ ul.main-forecast-specs {
   border-radius: 10px;
   backdrop-filter: blur(3px);
   display: flex;
-  padding: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   text-align: left;
 }
 
-.forecast:hover {
+.week-forecast:hover {
   /* transform: scale(1.1); */
   filter: brightness(105%);
 }
