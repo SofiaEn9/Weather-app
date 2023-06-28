@@ -16,7 +16,7 @@
   <body>
     <div class="container">
       <div class="weather-app">
-        <div class="forecast">
+        <div class="weather-app-display">
           <div class="row">
             <form id="search-form">
               <div class="row">
@@ -62,50 +62,33 @@
               </ul>
             </div>
             <div class="col-5">
-              <div class="row day-forecast">
-                <div class="col-5 mini-icon"></div>
-                <div class="day-specs">
-                  <ul>
-                    <li class="week-day">mon</li>
-                    <li class="week-day-temperature">38º / 22º</li>
-                  </ul>
+              <div class="row forecast">
+                <div class="col-5">
+                  <img
+                  src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png","
+                  alt="" class="forecast-icon" id="forecast-icon"/>
+                </div>
+                <div class="col-7 forecast-specs">
+                  <div class="forecast-day">mon</div>
+                  <div class="forecast-temperature">
+                    <span class="forecast-temperature-max">38º</span>
+                    <span class="forecast-temperature-division"> | </span>
+                    <span class="forecast-temperature-min">22º</span>
+                    <!-- <span class="forecast-units">C</span> -->
+                  </div>
                 </div>
               </div>
-              <div class="row day-forecast">
-                <div class="col-5 mini-icon"></div>
-                <div class="day-specs">
-                  <ul>
-                    <li class="week-day">tue</li>
-                    <li class="week-day-temperature">38º / 22º</li>
-                  </ul>
-                </div>
+              <div class="row forecast">
+                <div class="col-5 forecast-icon"></div>
               </div>
-              <div class="row day-forecast">
-                <div class="col-5 mini-icon"></div>
-                <div class="day-specs">
-                  <ul>
-                    <li class="week-day">wed</li>
-                    <li class="week-day-temperature">38º / 22º</li>
-                  </ul>
-                </div>
+              <div class="row forecast">
+                <div class="col-5 forecast-icon"></div>
               </div>
-              <div class="row day-forecast">
-                <div class="col-5 mini-icon"></div>
-                <div class="day-specs">
-                  <ul>
-                    <li class="week-day">thu</li>
-                    <li class="week-day-temperature">38º / 22º</li>
-                  </ul>
-                </div>
+              <div class="row forecast">
+                <div class="col-5 forecast-icon"></div>
               </div>
-              <div class="row day-forecast">
-                <div class="col-5 mini-icon"></div>
-                <div class="day-specs">
-                  <ul>
-                    <li class="week-day">fri</li>
-                    <li class="week-day-temperature">38º / 22º</li>
-                  </ul>
-                </div>
+              <div class="row forecast">
+                <div class="col-5 forecast-icon"></div>
               </div>
             </div>
           </div>
