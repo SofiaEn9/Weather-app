@@ -24,9 +24,11 @@ function formatDate(timestamp) {
 function displayTemperature(response) {
   console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.city;
-  document.querySelector("#current-temperature").innerHTML = Math.round(
-    response.data.temperature.current
-  );
+
+  celsiusTemperature = response.data.temperature.current;
+  document.querySelector("#current-temperature").innerHTML =
+    Math.round(celsiusTemperature);
+
   document.querySelector("#weather-description").innerHTML =
     response.data.condition.description;
   document.querySelector("#humidity").innerHTML =
@@ -45,7 +47,45 @@ function displayTemperature(response) {
   mainIcon.setAttribute("alt", response.data.condition.description);
 }
 
-let apiKey = "de926abe0f35af91c8149b6305ofa34t";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=Chihuahua&key=${apiKey}&units=metric`;
-// console.log(apiUrl);
-axios.get(apiUrl).then(displayTemperature);
+function searchInput(city) {
+  let apiKey = "de926abe0f35af91c8149b6305ofa34t";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#city-input");
+  searchInput(cityInput.value);
+}
+
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let temperatureElement = document.querySelector("#current-temperature");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+  console.log(fahrenheitTemperature);
+}
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector("#current-temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+searchInput("Chihuahua");

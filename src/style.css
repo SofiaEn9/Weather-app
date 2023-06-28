@@ -109,11 +109,20 @@ h1 {
   padding-left: 0px;
 }
 
-.degrees {
+.units {
   color: rgba(97, 103, 108, 0.8);
   font-size: 16px;
   position: relative;
   top: -19px;
+  cursor: default;
+}
+
+.active {
+  color: rgba(97, 103, 108, 0.8);
+}
+
+.units:hover {
+  text-decoration: none;
 }
 
 a {
