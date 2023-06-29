@@ -21,35 +21,46 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function displayForecast(response) {
-  console.log(response.data.daily);
+function formatForecastDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 
+  return days[day];
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
-  let days = ["thu", "fri", "sat", "sun", "mon"];
-
   let forecastHTML = ``;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
-    <div class="row week-forecast">
-      <div class="col-5">
-        <img
-          src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png","
-          alt="" class="forecast-icon" id="forecast-icon"/>
-      </div>
-      <div class="col-7 forecast-specs">
-        <div class="forecast-day">${day}</div>
-          <div class="forecast-temperature">
-            <span class="forecast-temperature-max">38º</span>
-            <span class="forecast-temperature-division"> | </span>
-            <span class="forecast-temperature-min">22º</span>
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML = `${forecastHTML}
+        <div class="row week-forecast">
+          <div class="col-5">
+            <img
+              src=${forecastDay.condition.icon_url}
+              alt="" class="forecast-icon" id="forecast-icon"/>
           </div>
-         </div>
-       </div>
-       </div>
-     `;
+        <div class="col-7 forecast-specs">
+          <div class="forecast-day">${formatForecastDay(forecastDay.time)}</div>
+            <div class="forecast-temperature">
+              <span class="forecast-temperature-max">
+              ${Math.round(forecastDay.temperature.maximum)}º
+              </span>
+              <span class="forecast-temperature-division">
+               | 
+               </span>
+              <span class="forecast-temperature-min">
+              ${Math.round(forecastDay.temperature.minimum)}º
+              </span>
+            </div>
+          </div>
+        </div>
+        </div>
+        `;
+    }
   });
 
   forecastElement.innerHTML = forecastHTML;
@@ -64,7 +75,6 @@ function getForecast(coordinates) {
 }
 
 function displayTemperature(response) {
-  console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.city;
 
   celsiusTemperature = response.data.temperature.current;
