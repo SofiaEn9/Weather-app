@@ -76,11 +76,9 @@ function getForecast(coordinates) {
 
 function displayTemperature(response) {
   document.querySelector("#city").innerHTML = response.data.city;
-
-  celsiusTemperature = response.data.temperature.current;
-  document.querySelector("#current-temperature").innerHTML =
-    Math.round(celsiusTemperature);
-
+  document.querySelector("#current-temperature").innerHTML = Math.round(
+    response.data.temperature.current
+  );
   document.querySelector("#weather-description").innerHTML =
     response.data.condition.description;
   document.querySelector("#humidity").innerHTML =
@@ -103,7 +101,8 @@ function displayTemperature(response) {
 
 function searchInput(city) {
   let apiKey = "de926abe0f35af91c8149b6305ofa34t";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  let units = "metric";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayTemperature);
 }
 
@@ -113,33 +112,7 @@ function handleSubmit(event) {
   searchInput(cityInput.value);
 }
 
-function displayFahrenheitTemperature(event) {
-  event.preventDefault();
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let temperatureElement = document.querySelector("#current-temperature");
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-  console.log(fahrenheitTemperature);
-}
-
-function displayCelsiusTemperature(event) {
-  event.preventDefault();
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  let temperatureElement = document.querySelector("#current-temperature");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-}
-
-let celsiusTemperature = null;
-
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 searchInput("Chihuahua");
