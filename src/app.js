@@ -1,3 +1,35 @@
+function changeBackgroundImage(description) {
+  let weatherDescription = description;
+  console.log(weatherDescription);
+  let backgroundDisplay = document.getElementById("background-display");
+
+  backgroundDisplay.classList.remove(
+    "clear",
+    "clouds",
+    "rain",
+    "thuderstorm",
+    "mist",
+    "snow"
+  );
+
+  if (weatherDescription.includes("clear")) {
+    backgroundDisplay.classList.add("clear");
+  } else if (weatherDescription.includes("clouds")) {
+    backgroundDisplay.classList.add("clouds");
+  } else if (weatherDescription.includes("rain")) {
+    backgroundDisplay.classList.add("rain");
+  } else if (weatherDescription.includes("thunderstorm")) {
+    backgroundDisplay.classList.add("thunderstorm");
+  } else if (
+    weatherDescription.includes("mist") ||
+    weatherDescription.includes("haze")
+  ) {
+    backgroundDisplay.classList.add("mist");
+  } else if (weatherDescription.includes("snow")) {
+    backgroundDisplay.classList.add("snow");
+  }
+}
+
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
@@ -97,6 +129,7 @@ function displayTemperature(response) {
   mainIcon.setAttribute("alt", response.data.condition.description);
 
   getForecast(response.data.coordinates);
+  changeBackgroundImage(response.data.condition.description);
 }
 
 function searchInput(city) {
