@@ -15,8 +15,8 @@ body {
 .clouds {
   background-image: radial-gradient(
       circle at 18.7% 37.8%,
-      rgb(250, 250, 250, 0.2) 0%,
-      rgb(225, 234, 238, 0.4) 90%
+      rgb(250, 250, 250, 0.3) 0%,
+      rgb(225, 234, 238, 0.5) 90%
     ),
     url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/087/548/original/scattered_clouds.jpg?1688063975);
   background-size: 600px;
@@ -83,10 +83,6 @@ body {
   margin-bottom: 20px;
 }
 
-::placeholder {
-  color: blue;
-}
-
 .btn {
   background: rgba(255, 255, 255, 0.5);
   box-shadow: 10px 10px 20px rgba(186, 193, 210, 0.2);
@@ -116,8 +112,8 @@ body {
   border-bottom: 1px solid rgba(200, 202, 225, 0.3);
   border-radius: 10px;
   backdrop-filter: blur(3px);
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 48px;
+  padding-bottom: 48px;
 }
 
 .main-forecast:hover {
