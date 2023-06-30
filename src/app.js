@@ -1,6 +1,5 @@
 function changeBackgroundImage(description) {
   let weatherDescription = description;
-  console.log(weatherDescription);
   let backgroundDisplay = document.getElementById("background-display");
 
   backgroundDisplay.classList.remove(
