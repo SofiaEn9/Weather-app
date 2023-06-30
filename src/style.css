@@ -5,21 +5,21 @@ body {
 .clear {
   background-image: radial-gradient(
       circle at 18.7% 37.8%,
-      rgb(250, 250, 250, 0.6) 0%,
-      rgb(225, 234, 238, 0.6) 90%
+      rgb(250, 250, 250, 0.8) 10%,
+      rgb(225, 234, 238, 0.4) 90%
     ),
-    url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/087/552/original/clear.jpeg?1688064183);
+    url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/087/643/original/ClearSky.jpg?1688145075);
   background-size: 600px;
 }
 
 .clouds {
   background-image: radial-gradient(
       circle at 18.7% 37.8%,
-      rgb(250, 250, 250, 0.3) 0%,
-      rgb(225, 234, 238, 0.5) 90%
+      rgb(250, 250, 250, 0.8) 0%,
+      rgb(225, 234, 238, 0.8) 90%
     ),
-    url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/087/548/original/scattered_clouds.jpg?1688063975);
-  background-size: 600px;
+    url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/087/625/original/sky-with-clouds-sunbeams.jpg?1688141036);
+  background-size: 900px;
 }
 
 .rain {
@@ -35,11 +35,11 @@ body {
 .thunderstorm {
   background-image: radial-gradient(
       circle at 18.7% 37.8%,
-      rgb(250, 250, 250, 0.8) 0%,
-      rgb(225, 234, 238, 0.8) 90%
+      rgb(250, 250, 250, 0.2) 0%,
+      rgb(225, 234, 238, 0.2) 90%
     ),
-    url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/087/561/original/Thunderstorm.jpg?1688066190);
-  background-size: 600px;
+    url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/087/632/original/Thunderstorm2.jpg?1688142308);
+  background-size: 900px;
 }
 
 .snow {
@@ -48,8 +48,8 @@ body {
       rgb(250, 250, 250, 0.8) 0%,
       rgb(225, 234, 238, 0.8) 90%
     ),
-    url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/087/560/original/Snow.jpg?1688066176);
-  background-size: 600px;
+    url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/087/624/original/Snow.jpg?1688141005);
+  background-size: 900px;
 }
 
 .mist {
@@ -59,7 +59,7 @@ body {
       rgb(225, 234, 238, 0.6) 90%
     ),
     url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/087/562/original/Mist.jpg?1688066244);
-  background-size: 700px;
+  background-size: 900px;
 }
 
 .weather-app-display {
